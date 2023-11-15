@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -29,7 +30,15 @@ public class CameraActivity extends AppCompatActivity {
         setContentView(R.layout.activity_camera);
 
         ImageButton captureButton = findViewById(R.id.captureButton);
+        ImageView backButton = findViewById(R.id.back_btn);
 
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle the back button click, e.g., finish() to go back
+                finish();
+            }
+        });
         captureButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

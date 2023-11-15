@@ -1,5 +1,6 @@
 package kz.just_code.multiscreen;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -30,6 +31,17 @@ public class GalleryActivity extends AppCompatActivity {
         Button prevButton = findViewById(R.id.prevButton);
         Button nextButton = findViewById(R.id.nextButton);
 
+        ImageView backButton = findViewById(R.id.back_btn);
+
+
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle the back button click, e.g., finish() to go back
+                finish();
+            }
+        });
         updateImageAndInfo();
 
         prevButton.setOnClickListener(new View.OnClickListener() {

@@ -4,8 +4,10 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -34,6 +36,14 @@ public class AudioActivity extends AppCompatActivity implements SurfaceHolder.Ca
 
         playButton.setOnClickListener(v -> playMedia());
         stopButton.setOnClickListener(v -> stopMedia());
+        ImageView backButton = findViewById(R.id.back_btn);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle the back button click, e.g., finish() to go back
+                finish();
+            }
+        });
     }
 
     private void playMedia() {
